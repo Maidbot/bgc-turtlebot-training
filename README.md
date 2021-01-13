@@ -11,8 +11,6 @@ BGC course for training a turtlebot to go a custom route.
 1. In the open terminal type `python main.py`
 1. Launch Kate to start editing these files. `kate main.py` or `kate directions.json`
 <br/>
-<br/>
-<br/>
 
 -------------
 # DEFINITIONS:
@@ -33,8 +31,6 @@ BGC course for training a turtlebot to go a custom route.
 ------
 ## FORMAT: linear speed | rotational speed | duration
 
-<br/>
-<br/>
 <br/>
 
 # Example file to edit for directions.json
