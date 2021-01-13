@@ -3,8 +3,13 @@ BGC course for training a turtlebot to go a custom route.
 
 <br />
 
-You can download this code to your VM by using: 
-`git clone https://github.com/Maidbot/bgc-turtlebot-training.git`
+## Steps
+1. Open a terminal session and navigate with `cd ~` to the root directory.
+1. Download this code to your VM by using git with: `git clone https://github.com/Maidbot/bgc-turtlebot-training.git`
+1. Navigate into the `bgc-turtlebot-training` directory created in the step above with `cd ~/bgc-turtlebot-training`
+1. Launch the `Gazebo Playground` on the desktop. 
+1. In the open terminal type `python main.py`
+1. Launch Kate to start editing these files. `kate main.py` or `kate directions.json`
 <br/>
 <br/>
 <br/>
@@ -45,15 +50,3 @@ You can download this code to your VM by using:
   ]
 }
 ```
-Notes:
-
-
-launch Gazebo_Playground from desktop
-
-Run command in terminal session: roslaunch turtlebot_navigation amcl_demo.launch map_file:=/opt/ros/indigo/share/turtlebot_gazebo/maps/playground.yaml
-
-Open separate terminal session and open rviz and load config file.
-
-teleop if running will prevent nav.
-
-rostopic pub /cmd_vel_mux/input/navi geometry_msgs/Twist "linear: x y z angular: x y z" -r 1 
