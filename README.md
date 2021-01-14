@@ -12,7 +12,7 @@ Make sure you open up your virtual machine (like the pre-workshop slides help yo
 1. Navigate into downloaded code by entering `cd bgc-turtlebot-training`.
 1. On the desktop, double-click the `Gazebo Playground` to launch the simulator.
 1. To run the workshop code, enter `python main.py`. You should see the robot move!
-1. You can edit these files by entering `kate main.py` or `kate directions.json`.
+1. You can edit your pattern by entring `kate directions.json`. **Don't forget to save your changes!**  
 <br/>
 
 -------------
@@ -41,7 +41,7 @@ right: 1
 ```
 
 ### Duration
-`DURATION` is from `0` to `10` representing how long the command should last (in seconds).
+`DURATION` is how long the command should last (in seconds). Try to keep it under `10`!
 
 <br/>
 
@@ -58,7 +58,8 @@ Here's an explanation of what each line means (everything after the `#` is a _co
     [0, -1,  1],    # This means "rotate left for 1 second"
     [1,  0, 10],    # This means "drive forwards for 10 seconds"
     [0,  1,  1],    # This means "rotate left for 1 second"
-    [1,  1,  5]     # This means "drive forwards while rotating to the right for 5 seconds"
+    [1,  1,  2.5]   # This means "drive forwards while rotating to the right for 2.5 seconds"
+                    # Make sure the last command does not have a comma (",") at the end! 
   ], 
   
   "myPattern": # This is the name of a pattern your robot will follow
@@ -68,3 +69,11 @@ Here's an explanation of what each line means (everything after the `#` is a _co
 
 }  # This is the end of the file
 ```
+
+# Frequently Asked Questions
+
+## How do I make my text bigger? I can't see it!
+You can hit `ctrl` and `+` at the same time.
+
+## Can I copy/paste into the virtual machines?
+Sometimes yes, but it depends on your system. You might not be able to.
