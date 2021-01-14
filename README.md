@@ -1,48 +1,70 @@
 # bgc-turtlebot-training
-BGC course for training a turtlebot to go a custom route.
+BGC course for commanding a turtlebot to follow movement patterns.
 
 <br />
 
 ## Steps
-1. Open a terminal session and navigate with `cd ~` to the root directory.
-1. Download this code to your VM by using git with: `git clone https://github.com/Maidbot/bgc-turtlebot-training.git`
-1. Navigate into the `bgc-turtlebot-training` directory created in the step above with `cd ~/bgc-turtlebot-training`
-1. Launch the `Gazebo Playground` on the desktop. 
-1. In the open terminal type `python main.py`
-1. Launch Kate to start editing these files. `kate main.py` or `kate directions.json`
+Make sure you open up your virtual machine (like the pre-workshop slides help you set up!)
+
+1. Open a terminal session by double-clicking on the `terminal` icon on the desktop.
+1. Make sure you're in the home folder by entering `cd ~` (change directory).
+1. Download the workship code by entering `git clone https://github.com/Maidbot/bgc-turtlebot-training.git`
+1. Navigate into downloaded code by entering `cd bgc-turtlebot-training`.
+1. On the desktop, double-click the `Gazebo Playground` to launch the simulator.
+1. To run the workshop code, enter `python main.py`. You should see the robot move!
+1. You can edit these files by entering `kate main.py` or `kate directions.json`.
 <br/>
 
 -------------
-# DEFINITIONS:
-## linear speed:
-### backwards -1
-### stop: 0
-### forwards: 1
+# Commands
+You can give your robot commands by editing the `directions.json` file. Commands look like this:
 
+```
+[DRIVE, ROTATE, DURATION]
+```
 
-------
-## rotational speed
-### left: -1
-### center: 0
-### right: 1
------
-## duration
-### duration in seconds: 0 - 10
-------
-## FORMAT: linear speed | rotational speed | duration
+### Driving Speed
+`DRIVE` is one of three values representing backwards, stopped and forwards:
+
+```
+backwards: -1
+stop: 0
+forwards: 1
+```
+
+### Rotation Speed
+`ROTATE` is one of three values representing rotating to the left, moving straight, or rotating to the right:
+```
+left: -1
+center: 0
+right: 1
+```
+
+### Duration
+`DURATION` is from `0` to `10` representing how long the command should last (in seconds).
 
 <br/>
 
-# Example file to edit for directions.json
-```{
-  "testPattern": [
-    [0,-1,1],
-    [1,0,10],
-    [0,1,1],
-    [1,0,10]
-  ],
-  "yourPattern": [
-    
-  ]
-}
+## Example 
+There's an example in the `directions.json` file you can use. 
+
+Here's an explanation of what each line means (everything after the `#` is a _comment_, not real code):
+
+```js
+{  # This is the start of the file
+
+  "testPattern": # This is the name of a pattern your robot will follow
+  [ 
+    [0, -1,  1],    # This means "rotate left for 1 second"
+    [1,  0, 10],    # This means "drive forwards for 10 seconds"
+    [0,  1,  1],    # This means "rotate left for 1 second"
+    [1,  1,  5]     # This means "drive forwards while rotating to the right for 5 seconds"
+  ], 
+  
+  "myPattern": # This is the name of a pattern your robot will follow
+  [  # This is the start of the commands for myPattern
+  # Enter your commands here!
+  ], # This is the end of the commands for myPattern
+
+}  # This is the end of the file
 ```

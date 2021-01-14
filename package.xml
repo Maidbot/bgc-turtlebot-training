@@ -2,12 +2,11 @@
 <package>
   <name>turtlesim_cleaner</name>
   <version>1.0.0</version>
-  <description>This package moves the turtle in a straight line</description>
+  <description>This package provides a playground to control a robot.</description>
   
   <maintainer email="bgc.outreach@maidbot.com">Maidbot Team</maintainer>
 <!-- We chose bsd license because it's commonly used by ros -->
   <license>BSD</license>
-
 
   <buildtool_depend>catkin</buildtool_depend>
 <!-- declarations for the libraries used-->  
