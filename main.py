@@ -29,7 +29,17 @@ class TurtleBot:
         duration = rospy.Duration(input_data[2])
 
         # Convert into a ROS message (with proper units)
-        adjusted_rotation_speed = rotational / 2  # convert to radians / second
+        adjusted_rotation_speed = rotational / 2.0  # convert to radians / second
+	
+	if abs(linear) > 0.01:
+	    if abs(adjusted_rotation_speed) > 0.01:
+	        log_message = "Driving at {} m/s and rotating at {} rad/s".format(linear, adjusted_rotation_speed)
+	    else:
+	      log_message = "Driving at {} m/s".format(linear)
+	else:
+	  log_message = "Rotating at {} rad/s".format(adjusted_rotation_speed)
+	log_message += " for {} s".format(duration.to_sec())
+	print(log_message)
         msg = self.movement_message(linear, adjusted_rotation_speed)
         
         # Publish the message until the duration has elapsed
