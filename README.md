@@ -35,9 +35,9 @@ forwards: 1
 ### Rotation Speed
 `ROTATE` is one of three values representing rotating to the left, moving straight, or rotating to the right:
 ```
-left: -1
+left:   1
 center: 0
-right: 1
+right: -1
 ```
 
 ### Duration
@@ -55,10 +55,10 @@ Here's an explanation of what each line means (everything after the `#` is a _co
 
   "testPattern": # This is the name of a pattern your robot will follow
   [ 
-    [0, -1,  1],    # This means "rotate left for 1 second"
+    [0, -1,  1],    # This means "rotate right for 1 second"
     [1,  0, 10],    # This means "drive forwards for 10 seconds"
-    [0,  1,  1],    # This means "rotate right for 1 second"
-    [1,  1,  2.5]   # This means "drive forwards while rotating to the right for 2.5 seconds"
+    [0,  1,  1],    # This means "rotate left for 1 second"
+    [1,  1,  2.5]   # This means "drive forwards while rotating to the left for 2.5 seconds"
                     # Make sure the last command does not have a comma (",") at the end! 
   ], 
   
